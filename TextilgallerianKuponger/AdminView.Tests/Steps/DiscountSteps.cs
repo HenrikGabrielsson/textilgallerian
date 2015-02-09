@@ -35,10 +35,40 @@ namespace AdminView.Tests
             driver.FindElement(By.Name("Percentage")).SendKeys(percentage);
         }
 
+        [Given(@"I have selected ""(.*)"" in the code type field")]
+        public void GivenIHaveSelectedInTheCodeTypeField(String codeType)
+        {
+            driver.FindElement(By.Name("Code Type")).SendKeys(codeType);
+        }
+
+        [Given(@"And I have entered ""(.*)"" in the amount field")]
+        public void GivenIHaveEnteredInTheAmountField(string amount)
+        {
+            driver.FindElement(By.Name("Amount")).SendKeys(amount);
+        }
+
         [Given(@"I have entered ""(.*)"" in the customer email field")]
         public void GivenIHaveEnteredInTheCustomerEmailField(String email)
         {
             driver.FindElement(By.Name("Email")).SendKeys(email);
+        }
+
+        [Given(@"I have selected ""(.*)"" in the Start Date field")]
+        public void GivenIHaveEnteredInTheStartDateField(String startDate)
+        {
+            driver.FindElement(By.Name("Start Date")).SendKeys(startDate);
+        }
+
+        [Given(@"I have selected ""(.*)"" in the End Date field")]
+        public void GivenIHaveEnteredInTheEndDateField(String endDate)
+        {
+            driver.FindElement(By.Name("End Date")).SendKeys(endDate);
+        }
+
+        [Given(@"I have selected ""(.*)"" in the combinable checkbox")]
+        public void GivenIHaveSelectedInTheCombinableCheckbox(String canBeCombined)
+        {
+            driver.FindElement(By.Name("Combinable")).SendKeys(canBeCombined);
         }
 
         [Given(@"I have entered ""(.*)"" in the ""(.*)"" field")]
@@ -47,16 +77,28 @@ namespace AdminView.Tests
             driver.FindElement(By.Name("limit")).SendKeys(limit);
         }
 
-        [Given(@"I have entered (.*) in the take field")]
+        [Given(@"I have entered ""(.*)"" in the take field")]
         public void GivenIHaveEnteredInTheTakeField(String take)
         {
             driver.FindElement(By.Name("Take")).SendKeys(take);
         }
 
-        [Given(@"I have entered (.*) in the pay field")]
+        [Given(@"I have entered ""(.*)"" in the pay field")]
         public void GivenIHaveEnteredInThePayField(String pay)
         {
             driver.FindElement(By.Name("Pay")).SendKeys(pay);
+        }
+
+        [Given(@"And I have entered ""(.*)"" in the Buy Products field")]
+        public void GivenIHaveEnteredInTheBuyProductsField(String buyProducts)
+        {
+            driver.FindElement(By.Name("Buy Products")).SendKeys(buyProducts);
+        }
+
+        [Given(@"And I have entered ""(.*)"" in the Free Products field")]
+        public void GivenIHaveEnteredInTheFreeProductsField(String freeProducts)
+        {
+            driver.FindElement(By.Name("Free Products")).SendKeys(freeProducts);
         }
 
         [Then(@"a discount of type ""(.*)"" should exist")]

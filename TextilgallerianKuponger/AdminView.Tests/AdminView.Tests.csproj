@@ -108,6 +108,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DebuggerShim.cs" />
+    <Compile Include="Specs\User.cs">
+      <DependentUpon>User.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Specs\Discount.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -158,6 +163,10 @@
     <None Include="fonts\icons.woff" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-2.1.3.min.map" />
+    <None Include="Specs\User.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>User.cs</LastGenOutput>
+    </None>
     <None Include="Views\SemanticUI\Index.cshtml" />
     <None Include="Views\Shared\_Layout_Semantic.cshtml" />
     <None Include="Specs\Discount.feature">
