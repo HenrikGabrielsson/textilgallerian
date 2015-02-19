@@ -1,5 +1,5 @@
-﻿@using AdminView.ViewModel
-@model CouponViewModel
+﻿
+@model AdminView.ViewModel.CouponViewModel
 
 @{
     ViewBag.Title = "Skapa Rabatt";
@@ -10,10 +10,18 @@
     <div class="column">
         <form class="ui form" method="post">
             @Html.AntiForgeryToken()
+
+            <div class="ui left floated segment">
+                <div class="ui fitted slider checkbox">
+                    <input type="checkbox" id="forAllCustomers">
+                    <label></label>
+                </div>
+            </div>
+
             <div class="field">
                 <label>
                     Välj typ av kampanj
-                    @Html.DropDownListFor(m => m.Type, new SelectList(CouponViewModel.CouponTypes, "Key", "Value"), new {@class = "type"})
+                    @Html.DropDownListFor(m => m.Type, new SelectList(AdminView.ViewModel.CouponViewModel.CouponTypes, "Key", "Value"), new {@class = "type"})
                 </label>
             </div>
             <div class="field">
@@ -31,10 +39,20 @@
 
             <div class="field">
                 <label>
+                    Kunder
+                    @Html.TextAreaFor(m => m.CustomerString)
+                </label>
+            </div>           
+
+
+            <div class="field">
+                <label>
                     Beskrivning
                     @Html.TextAreaFor(m => m.Parameters["Description"])
                 </label>
             </div>
+
+
 
             <div class="field">
                 <label>
