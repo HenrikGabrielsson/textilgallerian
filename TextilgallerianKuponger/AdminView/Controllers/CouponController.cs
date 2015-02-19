@@ -67,10 +67,8 @@ namespace AdminView.Controllers
                 var constructor = type.GetConstructor(new[] {typeof (IReadOnlyDictionary<String, String>)});
                 var coupon = constructor.Invoke(new object[] {model.Parameters}) as Coupon;
 
-                model.CreateCustomers();
-
                 coupon.CanBeCombined = model.CanBeCombined;
-                coupon.CustomersValidFor = model.Customers;
+                coupon.CustomersValidFor = model.Customers();
                 coupon.IsActive = true;
                 _couponRepository.Store(coupon);
                 _couponRepository.SaveChanges();
